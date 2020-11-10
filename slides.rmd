@@ -30,7 +30,7 @@ output:
 
 - Virtualization
 - Containerization
-  
+- third bullet 
 
 # Docker
 
@@ -51,3 +51,4 @@ output:
 ## Docker Swarm
 
 ## Elastic Kubernetes Service
+https://www.youtube.com/watch?v=ymZFsUBiKJA&list=PLr5vq44ZK6L0Oa6zVplkeVXOIAX5t_-ge&index=40 
