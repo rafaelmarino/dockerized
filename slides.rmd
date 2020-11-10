@@ -25,12 +25,13 @@ output:
 - Using one service per container guarantees independence 
 
 # Containers vs Virtual Machines
+Random explanation
+xxx
 
 ## Differences
 
 - Virtualization
 - Containerization
-- Random line
 - third bullet 
 - fourth bullet
 
