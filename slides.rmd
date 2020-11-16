@@ -24,6 +24,8 @@ output:
 - Containers facilitate the modularized development and deployment of microservices. 
 - Using one service per container guarantees independence 
 
+# Containerization
+
 # Containers vs Virtual Machines
 Random explanation
 xxx
@@ -37,21 +39,52 @@ xxx
 
 # Docker
 
+## Definition
+Docker is a Platform xxx
+
+# Docker Primitives
+
 ## Docker Engine
 
 ## Docker Image
+- We can think of a Docker Image as a stopped Docker Container
+- Each element within an image represents an image layer. Layers are then stacked on top of each other and ready to run. 
+- 
 
 ## Docker Container
+- Containers are the central unit on top of which all Docker is built, and they are better examined practically. 
 
 ## Docker Compose
 
 # Docker Demo
 
+## Graylog App
+- Graylog is an open source log management solution for capturing, storing, and analyzing machine data. It needs two dependencies:
+  - MongoDB: An open-source, “general purpose, document-based, distributed database”
+  - Elasticsearch: An open-source, “powerful analytics engine to explore data easily”.
+
+## Docker Run
+* ~$ docker container run <options> <image>:<tag> <app> * 
+
 ## Ubuntu Screenshots
 
-# Distributed Containers
+![Graylog Setup Commands]("images/installation.png")
 
-## Docker Swarm
+### Note
+In Ubuntu 20.04 LTS stock, installing graylog requires adjusting default virtual memory settings using: *sudo sysctl -w vm.max_map_count=262144*
 
-## Elastic Kubernetes Service
-https://www.youtube.com/watch?v=ymZFsUBiKJA&list=PLr5vq44ZK6L0Oa6zVplkeVXOIAX5t_-ge&index=40 
+## Further Container Commands[1]
+
+Command                   | Description 
+--------------------------|----------------
+*docker container prune*  | Remove all stopped containers
+*docker container start*  | Start one or more stopped containers
+*docker container diff*   | Inspect file or directory changes
+*docker container exec*   | Run a command in a running container
+*docker container export* | Export a container’s filesystem as a tar
+*docker container inspect*| Display detailed information
+*docker container kill*   | Kill one or more running containers
+*docker container logs*   | Fetch the logs of a container
+
+### [1]
+Documentation: https://docs.docker.com/engine/reference/commandline/container_run/
