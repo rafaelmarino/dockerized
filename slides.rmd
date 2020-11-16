@@ -64,14 +64,31 @@ Docker is a Platform xxx
   - Elasticsearch: An open-source, “powerful analytics engine to explore data easily”.
 
 ## Docker Run
-* ~$ docker container run <options> <image>:<tag> <app> * 
+*~$ docker container run \<options\> \<image\>:\<tag\> \<app\>* 
 
-## Ubuntu Screenshots
+## Graylog Setup
 
 ![Graylog Setup Commands]("images/installation.png")
 
 ### Note
 In Ubuntu 20.04 LTS stock, installing graylog requires adjusting default virtual memory settings using: *sudo sysctl -w vm.max_map_count=262144*
+
+## Testing Graylog
+
+![Running Containers' List]("images/container_list.png")
+![Graylog Running]("images/graylog_running.png")
+
+## Further Testing
+
+![Echo Command]("images/message.png")
+![Graylog Dashboard]("images/graylog_dash.png")
+
+## Killing the Application // Stoping and Removing Containers?? 
+
+![Stoping Single Container]("images/mongo_stop.png")
+
+![Stopping and Removing all Containers]("images/all_stop.png")
+
 
 ## Further Container Commands[1]
 
