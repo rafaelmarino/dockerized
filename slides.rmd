@@ -41,18 +41,25 @@ output:
 - Partitions only have access to their own content, and to specific shared OS Kernel components
 - A container is a standard unit of software that can be deployed on any other machine, virtual or otherwise, that runs a compatible OS; independently of any other containers
 
-## 
+## Architecture Diagram
 ![Container vs VM Architecture]("images/vs.png")
 
 
 # Docker & Docker Primitives
 
 ## What is Docker?
-- Docker is an open source platform for developers and systems engineers to build, ship, and run distributed applications
-- Docker can package code from an application, including all its dependencies, into a container
+- Docker is an open source Platform as a Service for developers and systems engineers to build, ship, and run distributed applications making use of containers
+- Docker can package code from an application, including all its dependencies, into a standard container
+- Docker includes a comprehensive set of concepts, tools and APIs: 
+  - Docker Engine
+  - Docker Image
+  - Docker Container
+  - Docker Compose
+  - Docker Swarm
+  - Data Volumes
+  - Networks
 
 ## Docker Engine
-
 - The Docker Engine is the underlying software that acts as a client-server for building, executing and orchestrating containers
 - It relies on 3 major components:
   - The Docker Daemon
@@ -65,8 +72,13 @@ output:
 
 ## Docker Image
 - We can think of a Docker Image as a stopped Docker Container
-- Each element within an image represents an image layer. Layers are then stacked on top of each other and ready to run. 
-- Docker Images can be pulled (downloaded) from image registries, which are collections of image repositories.
+- Each element within an image represents an image layer. Layers are then stacked on top of each other and ready to run
+- Docker Images can be pulled from image registries, which are collections of image repositories
+- The most popular repository is the Docker Hub
+
+### Notes
+- Docker Inc has recently established rate limits for Docker Hub. 
+- AWS has announced work on their own public image repository. 
 
 ## Building a Docker Image
 - Define the DockerFile
@@ -74,12 +86,14 @@ output:
 - It describes and contains all the layers
 - The image can be built running the *docker build* command
 
+### Notes
+- Images are lightweight. An Ubuntu 20 LTS image weights ~75 MB whereas the full install requires 25 GB
+- Images have great boot up speed
+
 ## Docker Container
 - A Docker Container is a runtime instance of a Docker Image
 - It is possible to run many Containers (instances) from one Image
-- Containers are the central unit on top of which all Docker is built, and they are better examined practically. 
-
-## Docker Compose
+- Containers are the central unit on top of which all Docker is built, and they are better examined practically
 
 # Docker Demo
 
@@ -136,3 +150,21 @@ Command                   | Description
 
 ### [1]
 Documentation: https://docs.docker.com/engine/reference/commandline/container_run/
+
+# Beyond 1 Container
+
+## Multiple Containers and 1 host: Docker Compose
+- Compose is an orchestrator tool for multiple-container applications (usually microservices)
+- An app designed using microservices will need 1 container per microservice
+- Compose is best suited for development and automated-testing environments, given its capacity to create multiple isolated environments on a single host
+- Compose is useful but it doesn't work to scale out of a single host into distributed systems
+
+## Multiple Containers and Hosts: Docker Swarm
+- Docker Swarm is Docker’s distributed computation solution and a cluster management system
+- A cluster of Docker Engines (Hosts) is called a swarm
+- The key concepts to understand Swarm are: nodes, services & tasks, and load balancing
+- A node refers to an instance of a Docker Engine 
+- Load balancing. Balancing and work distribution can be configured internally or be outsourced to an external balancer
+
+### Notes
+- Swarm competes with Kubernetes 

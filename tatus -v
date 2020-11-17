@@ -1,0 +1,65 @@
+[33mcommit 385ac4d73afecc0a67481c72350a4bda72939c5f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Rafael Marino <rafaelmarinor@gmail.com>
+Date:   Tue Nov 17 12:59:22 2020 -0500
+
+    progress
+
+[33mcommit b2c3c72f27fa88b3351262f973e640b603737d81[m
+Author: Eduardo Cassinelli <edujkb@gmail.com>
+Date:   Tue Nov 17 11:38:39 2020 -0500
+
+    adding screenshots to images folder
+
+[33mcommit 770b3412d2fd54815163357b8faf7d57c3059300[m[33m ([m[1;31morigin/eduardo[m[33m)[m
+Author: Eduardo Cassinelli <edujkb@gmail.com>
+Date:   Mon Nov 16 17:06:31 2020 -0500
+
+    added slides and images for the Docker Demo section.
+
+[33mcommit b186df7cdfc699f14187478fafc1cf1ea984dc79[m
+Author: Rafael Marino <rafaelmarinor@gmail.com>
+Date:   Mon Nov 16 13:46:42 2020 -0500
+
+    update
+
+[33mcommit eaeee16ee8ccfb003cd35ac3215bfd910dc43cfa[m
+Merge: 4d3698c 7da096c
+Author: Rafael Marino <rafaelmarinor@gmail.com>
+Date:   Tue Nov 10 17:09:35 2020 -0500
+
+    fixed commit
+    
+    Merge branch 'master' of https://github.com/rafaelmarino/dockerized
+    
+    # Conflicts:
+    #       slides.rmd
+
+[33mcommit 7da096c3592bc594a6d7248d7566ac2acec40c3c[m
+Author: Eduardo Cassinelli <edujkb@gmail.com>
+Date:   Tue Nov 10 17:04:14 2020 -0500
+
+    Random Line 2
+
+[33mcommit 4d3698c52f1cf9fe413d0ecce0e1decd2c547d81[m
+Author: Rafael Marino <rafaelmarinor@gmail.com>
+Date:   Tue Nov 10 17:03:36 2020 -0500
+
+    random commit
+
+[33mcommit 94783278fe1e1405bf046b1e408cd761fd6e3a38[m
+Author: Eduardo Cassinelli <edujkb@gmail.com>
+Date:   Tue Nov 10 16:56:33 2020 -0500
+
+    forth commit
+
+[33mcommit 6043292d363c970f2fa9dc2bbac58e299a8556ea[m
+Author: Rafael Marino <rafaelmarinor@gmail.com>
+Date:   Tue Nov 10 16:37:21 2020 -0500
+
+    "second commit, add third bullet"
+
+[33mcommit 9242c0e72b758d208f4c8a449966e4f9952ef9e1[m
+Author: Rafael Marino <rafaelmarinor@gmail.com>
+Date:   Fri Nov 6 11:14:52 2020 -0500
+
+    first commit
