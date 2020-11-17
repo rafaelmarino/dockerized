@@ -1,5 +1,5 @@
 ---
-title: "Docker Containers"
+title: "Exploring Containerization with Docker"
 subtitle: "CMIS 545 - Cloud Computing Architecture"
 author: Rafael Marino, Eduardo Cassinelli
 institute: McGill University
