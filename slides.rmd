@@ -48,17 +48,35 @@ output:
 # Docker & Docker Primitives
 
 ## What is Docker?
-- Docker is a Platform xxx
-- Docker can package code from an application, including all its dependencies, into a container. 
+- Docker is an open source platform for developers and systems engineers to build, ship, and run distributed applications
+- Docker can package code from an application, including all its dependencies, into a container
 
 ## Docker Engine
+
+- The Docker Engine is the underlying software that acts as a client-server for building, executing and orchestrating containers
+- It relies on 3 major components:
+  - The Docker Daemon
+  - The Docker Engine API
+  - The Command Line Interface
+  
+## Docker Engine Diagram
+
+![Docker Engine Diagram]("images/docker_engine.png"){width=80%}
 
 ## Docker Image
 - We can think of a Docker Image as a stopped Docker Container
 - Each element within an image represents an image layer. Layers are then stacked on top of each other and ready to run. 
-- 
+- Docker Images can be pulled (downloaded) from image registries, which are collections of image repositories.
+
+## Building a Docker Image
+- Define the DockerFile
+- The DockerFile declares the staring point of the image: From Scratch or From Parent Image
+- It describes and contains all the layers
+- The image can be built running the *docker build* command
 
 ## Docker Container
+- A Docker Container is a runtime instance of a Docker Image
+- It is possible to run many Containers (instances) from one Image
 - Containers are the central unit on top of which all Docker is built, and they are better examined practically. 
 
 ## Docker Compose
