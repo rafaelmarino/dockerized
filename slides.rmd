@@ -17,32 +17,39 @@ output:
 # Just Enough Microservices
   
 ## What are Microservices?
-- Microservices are
+- Microservices are a good starting point for containers  
+- Microservices are self-contained, independent, autonomous, loosely coupled services that work together
+- No standard definition, they are usually built around a business domain
+- Designed specifically to allow independent deployability of each service
 
 ## How do Microservices relate to Containers?
 
-- Containers facilitate the modularized development and deployment of microservices. 
-- Using one service per container guarantees independence 
+- Containers facilitate the modularized development and deployment of microservices
+- For this level of independence and flexibility to exist, a clear definition between service boundaries must also exist
+- Having services tied to specific machines would be inefficient and risky 
+- Using one container per service guarantees independence 
 
-# Containerization
+# Virtual Machines vs Containers
 
-# Containers vs Virtual Machines
-Random explanation
-xxx
+## Virtual Machines 
+- Virtualization allows the creation of an abstraction layer (Hypervisor) on top of the host OS to divide and virtualize physical resources
+- Resources from the host machine are carved out into multiple Virtual Machines
+- Each VM runs an independent, guest OS 
 
-## Differences
+## Containers
+- Containerization is based on the creation of isolated partitions or zones directly from within the host OS, no virtualization software required
+- Partitions only have access to their own content, and to specific shared OS Kernel components
+- A container is a standard unit of software that can be deployed on any other machine, virtual or otherwise, that runs a compatible OS; independently of any other containers
 
-- Virtualization
-- Containerization
-- third bullet 
-- fourth bullet
+## 
+![Container vs VM Architecture]("images/vs.png")
 
-# Docker
 
-## Definition
-Docker is a Platform xxx
+# Docker & Docker Primitives
 
-# Docker Primitives
+## What is Docker?
+- Docker is a Platform xxx
+- Docker can package code from an application, including all its dependencies, into a container. 
 
 ## Docker Engine
 
@@ -59,12 +66,19 @@ Docker is a Platform xxx
 # Docker Demo
 
 ## Graylog App
-- Graylog is an open source log management solution for capturing, storing, and analyzing machine data. It needs two dependencies:
+- Graylog is an open source log management solution for capturing, storing, and analyzing machine data
+- It needs two dependencies:
   - MongoDB: An open-source, “general purpose, document-based, distributed database”
-  - Elasticsearch: An open-source, “powerful analytics engine to explore data easily”.
+  - Elasticsearch: An open-source, “powerful analytics engine to explore data easily”
 
 ## Docker Run
 *~$ docker container run \<options\> \<image\>:\<tag\> \<app\>* 
+
+- \<options\>: refers to the container command flags
+- \<image\>: refers to the original name or id of the image
+- \<tag\>: refers to the specific version of that image
+
+*~$ docker container run -d --name ubuntu ubuntu:latest*
 
 ## Graylog Setup
 
@@ -73,17 +87,16 @@ Docker is a Platform xxx
 ### Note
 In Ubuntu 20.04 LTS stock, installing graylog requires adjusting default virtual memory settings using: *sudo sysctl -w vm.max_map_count=262144*
 
+## Running Containers
+![Running Containers' List]("images/container_list.png")
+
 ## Testing Graylog
 
-![Running Containers' List]("images/container_list.png")
-![Graylog Running]("images/graylog_running.png")
+![Echo Command]("images/message.png"){width=70%}
 
-## Further Testing
+![Graylog Dashboard]("images/graylog_dash.png"){width=90%}
 
-![Echo Command]("images/message.png")
-![Graylog Dashboard]("images/graylog_dash.png")
-
-## Killing the Application // Stoping and Removing Containers?? 
+## Stoping and Removing Containers
 
 ![Stoping Single Container]("images/mongo_stop.png")
 
