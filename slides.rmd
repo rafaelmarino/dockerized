@@ -18,32 +18,36 @@ output:
   
 ## What are Microservices?
 - Microservices are a good starting point for containers  
-- Microservices are self-contained, independent, autonomous, loosely coupled services that work together
-- No standard definition, they are usually built around a business domain
-- Designed specifically to allow independent deployability of each service
+- No standard definition, they are usually built around a business domain (Domain-driven design)
+- They stand in contrast to so-called monolithic architectures
+- Refinement of Service-oriented architecture
+- Designed specifically to allow independent deployability of each service 
+- Self-contained, independent, autonomous, loosely coupled services that work together
 
 ## How do Microservices relate to Containers?
-
-- Containers facilitate the modularized development and deployment of microservices
 - For this level of independence and flexibility to exist, a clear definition between service boundaries must also exist
 - Having services tied to specific machines would be inefficient and risky 
-- Using one container per service guarantees independence 
+- Containers facilitate the modularized development and deployment of microservices
+- Using one container per service helps with separation of concerns and independence 
 
 # Virtual Machines vs Containers
 
 ## Virtual Machines 
-- Virtualization allows the creation of an abstraction layer (Hypervisor) on top of the host OS to divide and virtualize physical resources
-- Resources from the host machine are carved out into multiple Virtual Machines
+- Virtualization installs an abstraction layer (Hypervisor) on top of the host OS
+- Resources from the host machine are carved up into multiple Virtual Machines
 - Each VM runs an independent, guest OS 
 
 ## Containers
-- Containerization is based on the creation of isolated partitions or zones directly from within the host OS, no virtualization software required
-- Partitions only have access to their own content, and to specific shared OS Kernel components
-- A container is a standard unit of software that can be deployed on any other machine, virtual or otherwise, that runs a compatible OS; independently of any other containers
+- Containers are isolated partitions created directly from within the host OS
+- Standard units of software that can be deployed on any other machine, virtual or otherwise, that runs a compatible OS
+- No separate virtualization software required
+- Containers only have access to their own content, and to specific shared OS Kernel components
+
+### Notes
+VMs and containers can be combined depending on use case design and requirements
 
 ## Architecture Diagram
 ![Container vs VM Architecture]("images/vs.png")
-
 
 # Docker & Docker Primitives
 
@@ -57,7 +61,7 @@ output:
   - Docker Compose
   - Docker Swarm
   - Data Volumes
-  - Networks
+  - Networking
 
 ## Docker Engine
 - The Docker Engine is the underlying software that acts as a client-server for building, executing and orchestrating containers
@@ -72,13 +76,14 @@ output:
 
 ## Docker Image
 - We can think of a Docker Image as a stopped Docker Container
-- Each element within an image represents an image layer. Layers are then stacked on top of each other and ready to run
+- Each element within an image represents an image layer
+- Layers are then stacked on top of each other and ready to run
 - Docker Images can be pulled from image registries, which are collections of image repositories
 - The most popular repository is the Docker Hub
 
 ### Notes
-- Docker Inc has recently established rate limits for Docker Hub. 
-- AWS has announced work on their own public image repository. 
+- Docker Inc has recently established rate limits for Docker Hub
+- AWS has announced work on their own public image repository
 
 ## Building a Docker Image
 - Define the DockerFile
@@ -93,7 +98,9 @@ output:
 ## Docker Container
 - A Docker Container is a runtime instance of a Docker Image
 - It is possible to run many Containers (instances) from one Image
-- Containers are the central unit on top of which all Docker is built, and they are better examined practically
+- Containers are the central unit on top of which all Docker is built, and they are better examined practically  
+
+![One image -> many containers]("images/img_cont.png"){width=70%}
 
 # Docker Demo
 
@@ -151,20 +158,20 @@ Command                   | Description
 ### [1]
 Documentation: https://docs.docker.com/engine/reference/commandline/container_run/
 
-# Beyond 1 Container
+# Multi-Container Apps
 
-## Multiple Containers and 1 host: Docker Compose
-- Compose is an orchestrator tool for multiple-container applications (usually microservices)
+## Docker Compose: Multiple Containers, 1 Host
+- Compose is an orchestrator tool for multi-container applications (usually microservices)
 - An app designed using microservices will need 1 container per microservice
 - Compose is best suited for development and automated-testing environments, given its capacity to create multiple isolated environments on a single host
 - Compose is useful but it doesn't work to scale out of a single host into distributed systems
 
-## Multiple Containers and Hosts: Docker Swarm
-- Docker Swarm is Docker’s distributed computation solution and a cluster management system
+## Docker Swarm: Multiple Containers, Multiple Hosts
+- Docker Swarm is Docker’s distributed computation solution and cluster management system
 - A cluster of Docker Engines (Hosts) is called a swarm
 - The key concepts to understand Swarm are: nodes, services & tasks, and load balancing
 - A node refers to an instance of a Docker Engine 
-- Load balancing. Balancing and work distribution can be configured internally or be outsourced to an external balancer
+- Load balancing. Work distribution and balancing can be configured internally or be outsourced to an external balancer
 
 ### Notes
 - Swarm competes with Kubernetes 
